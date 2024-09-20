@@ -1,0 +1,47 @@
+
+<mat-toolbar class="navigation-top-bar">
+  <div class="toggler" role="button" routerLink="/home">
+    <mat-icon >
+      menu
+    </mat-icon>
+  </div>
+  <div class="icon">
+    <mat-icon style="color:skyblue;padding-inline:17px">cloud</mat-icon>
+  </div>
+  {{weather}}
+
+ 
+  <span class="example-spacer"></span>
+  <a class="chat-link" routerLink="/chat">
+  <img src="/assets/message.png" alt="Message Icon" style="width: 30px; height: 30px; float: right;">
+</a>
+
+<span class="username">
+  <h3>{{ username }}</h3>
+</span>
+
+
+
+    <button class="profil-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <div class="circle" [ngStyle]="{'background': color}">
+        <span class="initials">
+          <h1>{{getUsername() | firstLetter}}</h1>
+        </span>
+      </div>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/profil">
+        <mat-icon>settings</mat-icon>
+        <span>Setting</span>
+      </button>
+      <button mat-menu-item  (click)="logout()" routerLink="/login">
+        <mat-icon >
+          <span class="material-icons-outlined">logout</span>
+        </mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  <div class="navigation-extended">
+    <ng-content select="[panel=navigationExtended"></ng-content>
+  </div>
+</mat-toolbar>

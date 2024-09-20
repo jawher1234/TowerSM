@@ -1,0 +1,50 @@
+
+<div class="container">
+  
+  <form (ngSubmit)="createTaxiway()">
+    <h1>Ajouter Apron</h1>
+
+    <mat-form-field class="full-width">
+      <mat-label>Sélectionner un aéroport</mat-label>
+      <mat-select id="selectedAerport" name="selectedAerport" [(ngModel)]="selectedAerportId" (change)="onAerportSelectionChange()">
+        <mat-option  value="" disabled selected>Sélectionnez un aéroport</mat-option>
+        <mat-option *ngFor="let aerport of aerports" [value]="aerport.id">{{ aerport.name }}</mat-option>
+      </mat-select>
+  
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" id="name" required [(ngModel)]="taxiway.name" name="name" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Position :</mat-label>
+      
+        <input matInput rows="4" id="position" name="position" [(ngModel)]="taxiway.position" />
+     
+    </mat-form-field>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button mat-icon-button type="button" (click)="toggleMapCard()">
+          <mat-icon>map</mat-icon>
+        </button>
+      </div>
+      
+    <mat-card *ngIf="showMap">
+
+      <div id="map"></div>
+    </mat-card>
+    </div>
+    
+    <div class="form-group col-md-6">
+    
+      <button mat-raised-button color="primary" type="submit">Enregistrer</button>
+    </div>
+    <input type="reset" class="btn btn-info" value="Annuler">
+
+  </form>
+  
+
+
+
+</div>

@@ -1,0 +1,14 @@
+<div class="container" [ngClass]="configuration.sidePanelPosition">
+  <div class="right-column">
+    <div class="navigation-bar">
+      <ng-content select="[container=navigationBar]"></ng-content>
+    </div>
+    <div class="main-content">
+      <ng-content select="[container=mainContent]"></ng-content>
+    </div>
+    <div class="footer">
+      <ng-content select="[container=footer]"></ng-content>
+      Welcome To Tower_Sim
+    </div>
+  </div>
+</div>

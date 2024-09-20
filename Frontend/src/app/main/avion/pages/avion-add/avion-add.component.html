@@ -1,0 +1,19 @@
+<form class="avion-card">
+    <h2> Ajouter Avion</h2>
+    <mat-form-field class ="form-row">
+        <input type="text" matInput name="name" [(ngModel)]="name" placeholder="name">
+      </mat-form-field>
+      <mat-form-field class ="form-row">
+        <input type="text" matInput name="vitesse" [(ngModel)]="type" placeholder="vitesse">
+      </mat-form-field>
+
+      <mat-form-field class ="form-row">
+        <input type="text" matInput name="type" [(ngModel)]="vitesse" placeholder="type">
+      </mat-form-field>
+   
+      <input type="file" id="fileInput" (change)="selectFile($event)" name="fileInput" />
+      <button mat-button color="primary" class="button-container" (click)="upload()">
+        Enregistrer
+      </button>
+
+</form>

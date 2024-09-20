@@ -1,0 +1,85 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/avion-commercial-volant-au-dessus-nuages.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+#map {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  
+  }
+  
+  form {
+    display: flex;
+    flex-direction: row; /* Affiche les éléments du formulaire horizontalement */
+    flex-wrap: wrap; /* Permet le retour à la ligne des éléments si nécessaire */
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 100px;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+.success-message-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dff0d8; /* Couleur de fond pour indiquer le succès */
+  color: #3c763d; /* Couleur du texte */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+}
+
+.success-icon {
+  color: #3c763d; /* Couleur de l'icône de confirmation */
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.mat-form-field {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.mat-form-field:last-child {
+  margin-bottom: 24px; /* Ajoute un espace sous le dernier champ */
+}
+.position-container {
+  display: flex;
+  align-items: center; /* Centre les éléments verticalement */
+  justify-content: space-between; /* Espacement entre les éléments */
+}
+
+.position-input {
+  flex-grow: 1; /* Permet au champ de texte de prendre la majorité de l'espace */
+}
+

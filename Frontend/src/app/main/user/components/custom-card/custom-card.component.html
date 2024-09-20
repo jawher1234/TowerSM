@@ -1,0 +1,14 @@
+<body>
+  <div class="box">
+    <h2 mat-dialog-title><mat-icon>check_circle</mat-icon> Delete Confirmation</h2>
+    <mat-dialog-content class="mat-typography">
+      <h3 style="color: #333; font-size: 16px;">
+        {{ data.message }}
+      </h3>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">{{ data.buttonText.cancel }}</button>
+      <button mat-button color="warn" [mat-dialog-close]="true"><mat-icon>check</mat-icon> {{ data.buttonText.ok }}</button>
+    </mat-dialog-actions>
+  </div>
+</body>

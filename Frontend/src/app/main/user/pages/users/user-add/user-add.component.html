@@ -1,0 +1,97 @@
+<div class="container">
+  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <h1>Ajouter utilisateur</h1>
+
+    <mat-form-field class="full-width">
+      <mat-label>Roles</mat-label>
+      <mat-select [(ngModel)]="form.roles" name="roles" (selectionChange)="onRoleSelectionChange($event)">
+        <mat-option [value]="'admin'">Admin</mat-option>
+        <mat-option [value]="'controleur'">Controller</mat-option>
+        <mat-option [value]="'pilote'">Pilote</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+
+    <!-- Ces champs ne s'affichent que si le rôle "admin" est sélectionné -->
+    <ng-container *ngIf="selectedRole === 'admin'">
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput name="username" [(ngModel)]="form.username" placeholder="Username" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" placeholder="Password" [(ngModel)]="form.password" autocomplete="on" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput name="email" placeholder="Email" [(ngModel)]="form.email" autocomplete="on" required>
+      </mat-form-field>
+    </ng-container>
+
+    
+    <ng-container *ngIf="selectedRole === 'controleur'">
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput name="username" [(ngModel)]="form.username" placeholder="Username" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" placeholder="Password" [(ngModel)]="form.password" autocomplete="on" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput name="email" placeholder="Email" [(ngModel)]="form.email" autocomplete="on" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Selectionner un aéroport</mat-label>
+        <mat-select id="selectedAeroportId" name="selectedAeroportId" [(ngModel)]="selectedAeroportId" (selectionChange)="onAeroportSelectionChange()">
+          <mat-option *ngFor="let aeroport of aeroports" [value]="aeroport.position">{{ aeroport.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      
+  
+    </ng-container>
+
+    <ng-container *ngIf="selectedRole === 'pilote'">
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput name="username" [(ngModel)]="form.username" placeholder="Username" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" placeholder="Password" [(ngModel)]="form.password" autocomplete="on" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput name="email" placeholder="Email" [(ngModel)]="form.email" autocomplete="on" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Selectionner apron</mat-label>
+        <mat-select id="selectedTaxiway" name="selectedTaxiway" [(ngModel)]="selectedTaxiwayId" (selectionChange)="onTaxiwaySelectionChange()">
+          <mat-option *ngFor="let taxiway of taxiways" [value]="taxiway.position">{{ taxiway.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Selectionner avion</mat-label>
+        <mat-select id="selectedAvion" name="selectedAvion" [(ngModel)]="selectedAvionId" (selectionChange)="onAvionSelectionChange()">
+          <mat-option *ngFor="let avion of avions" [value]="avion.id">{{ avion.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+    </ng-container>
+
+    
+
+    <!-- D'autres champs peuvent être ajoutés ici, avec ou sans conditions -->
+
+    <button mat-raised-button color="primary" type="submit">Enregistrer</button>
+  </form>
+</div>

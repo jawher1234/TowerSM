@@ -1,0 +1,156 @@
+<body style="margin: -20px">
+	<main>
+		<nav class="main-menu">
+			<ul>
+				<li class="nav-item active">
+				  <b></b>
+				  <b></b>
+				  <a href="#">
+					<i class="fa fa-sharp fa-solid fa-house"></i>
+					<span class="nav-text">Home</span>
+				  </a>
+				</li>
+	  
+				<li class="nav-item">
+				  <b></b>
+				  <b></b>
+				  <a href="/users">
+					<i class="fa fa-user nav-icon"></i>
+					<span class="nav-text">Users</span>
+				  </a>
+				</li>
+	  
+				<li class="nav-item">
+				  <b></b>
+				  <b></b>
+				  <a href="/aeroports">
+					<i class="fa fa-map nav-icon"></i>
+					<span class="nav-text">Aéroports</span>
+				  </a>
+				</li>
+	  
+				<li class="nav-item">
+					<b></b>
+					<b></b>
+					<a href="/avions">
+						<i class="fa fa-sharp fa-solid fa-plane nav-icon"></i>
+					  <span class="nav-text">Avions</span>
+					</a>
+				  </li>
+	  
+				<li class="nav-item">
+				  <b></b>
+				  <b></b>
+				  <a href="/runway">
+					<i class="fa fa-sliders nav-icon"></i>
+					<span class="nav-text">Settings</span>
+				  </a>
+				</li>
+			  </ul>
+			</nav>
+	  
+
+		<section class="content">
+			<div class="left-content">
+				<div class="activities">
+					
+					<div class="activity-container">
+				
+
+						<div class="image-container img-three" routerLink="/aeroports">
+							<img src="/assets/avion-passagers-decollant-au-ciel-crepusculaire-genere-par-ia_188544-24640.png"
+								alt="tennis" />
+							<div class="overlay">
+								<h3>Aéroports</h3>
+							</div>
+						</div>
+
+						
+
+						
+
+					
+					</div>
+				</div>
+
+				<div class="left-bottom">
+					<div class="weekly-schedule">
+						<h1 routerLink="/users" style="z-index: 9999;">Liste des utilisateurs</h1>
+						<div class="calendar" *ngFor="let user of users.slice(0,4)">
+							<div class="day-and-activity activity-one">
+								<div class="day">
+									<h3>{{user.username}}</h3>
+								</div>
+								<div class="activity">
+									<h4 style="margin-inline: 15px;">{{user.email}}</h4>
+									<div class="participants">
+									</div>
+								</div>
+								<button class="btn" (click)="handleUserSelect(user)">View</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="personal-bests">
+						
+						<div class="personal-bests-container">
+							<div class="best-item box-one">
+								
+								<img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png"
+									alt="" />
+									<p>Admin:{{ adminCount }}</p>
+							</div>
+							<div class="best-item box-two">
+								
+								
+								<img src="https://cdn.icon-icons.com/icons2/11/PNG/256/pilot_person_people_man_1649.png"
+									alt="" />
+									<p>Controleur:{{ controleurCount }}</p>
+							</div>
+							<div class="best-item box-three">
+								<img src="https://cdn-icons-png.flaticon.com/512/9159/9159713.png"
+									alt="" />
+								<p>Pilote : {{ piloteCount }}</p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="right-content">
+				<div class="user-info">
+					<div class="icon-container">
+						<i class="fa fa-sssbell nav-icon"></i>
+						<i class="fa fass-message nav-icon"></i>
+					</div>
+					<h4></h4>
+				</div>
+
+		
+
+
+				<div class="friends-activity">
+					<h1 routerLink="/avions" style="z-index: 9999;">Liste des avions</h1>
+					<div class="card-container">
+						<div class="card" *ngFor="let plane of avions.slice(0,2)">
+							<div class="card-user-info">
+								
+								<h2>{{plane['name']}}</h2>
+							</div>
+							<img class="card-img" *ngIf="plane['type'] === 'Boeing'"
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj6wckkdU6DZ8WV5PObOl4jnWyowchXjghyQ&s"
+								alt="" />
+
+								<img class="card-img" *ngIf="plane['type'] === 'Airbus'"
+								src="https://petit-actionnaire.fr/wp-content/uploads/2022/12/airbus-logo-2.jpg"
+								alt="" />
+								
+							<p>{{plane['type']}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>

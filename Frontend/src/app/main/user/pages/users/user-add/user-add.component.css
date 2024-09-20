@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/avion-commercial-volant-au-dessus-nuages.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row; /* Affiche les éléments du formulaire horizontalement */
+  flex-wrap: wrap; /* Permet le retour à la ligne des éléments si nécessaire */
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  flex: 1; /* Les champs de saisie s'étirent pour remplir l'espace disponible */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: auto; /* Ajuste la largeur du bouton au contenu */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

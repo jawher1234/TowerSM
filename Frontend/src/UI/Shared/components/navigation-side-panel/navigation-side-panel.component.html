@@ -1,0 +1,52 @@
+<div class="layout has-sidebar fixed-sidebar fixed-header">
+  <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+    <div class="sidebar-layout">
+      <div class="sidebar-header">
+        <div class="pro-sidebar-logo">
+          <div>T</div>
+          <h5 [ngStyle]="{ 'opacity':opacity}">TowerSim</h5>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <ul class="navigation-panel-menu" *ngIf="links && links.length > 0 && swith()==true ">
+          <mat-nav-list class="navlist">
+            <mat-accordion>
+              <mat-expansion-panel class="mat-expansion-panel" *ngFor="let link of links">
+
+                <mat-expansion-panel-header class="mat-expansion-panel-header"
+                                            [routerLink]="link.url"
+                                            [routerLinkActive]="['active1']"
+                                            [routerLinkActiveOptions]="{exact: true}">
+                  <mat-icon mat-list-icon class="navlist-icon"[routerLinkActive]="['active1']"
+                            [routerLinkActiveOptions]="{exact: true}">{{link.iconClass}}</mat-icon>
+                  {{link.text}}
+                </mat-expansion-panel-header>
+                <a class="text-expansion" [routerLink]="link.url"
+                   [routerLinkActive]="['active2']"
+                   [routerLinkActiveOptions]="{exact: true}">
+                 
+                </a>
+
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-nav-list>
+        </ul>
+        <ul class="navigation-panel-menu" *ngIf="links && links.length > 0 && swith()==false">
+    <mat-nav-list class="navlist">
+      <mat-list-item class="listitemCustom" *ngFor="let link of links"
+                     [routerLinkActive]="['active']"
+                     [routerLinkActiveOptions]="{exact: true}">
+        <button mat-icon-button class="navlistMenu" >
+          <mat-icon mat-list-icon class="navlist-icon"
+                    [matTooltip]="link.text"
+                    [routerLink]="link.url"
+                   
+          >{{link.iconClass}}</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </ul>
+      </div>
+
+</div>

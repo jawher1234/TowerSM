@@ -1,0 +1,25 @@
+<div *ngIf="displayMenu">
+  <app-dashboard-layout [configuration]="configuration" >
+    <div container="sidePanel" *ngIf="isAdmin">
+      <app-navigation-side-panel [links]="linksAdmin"></app-navigation-side-panel>
+    </div>
+    <div container="sidePanel" *ngIf="isPilote">
+      <app-navigation-side-panel [links]="linksPilote"></app-navigation-side-panel>
+    </div>
+    <div container="sidePanel" *ngIf="isControleur">
+      <app-navigation-side-panel [links]="linksControleur"></app-navigation-side-panel>
+    </div>
+    <div container="navigationBar">
+      <app-navigation-bar></app-navigation-bar>
+    </div>
+    <div container="mainContent" class="mainContent">
+      <router-outlet></router-outlet>
+    </div>
+    <div>
+      <app-footer></app-footer>
+    </div>
+  </app-dashboard-layout>
+</div>
+<div *ngIf="!displayMenu">
+  <router-outlet></router-outlet>
+</div>

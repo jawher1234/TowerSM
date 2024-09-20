@@ -1,0 +1,38 @@
+<mat-card class="avion-update-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>flight</mat-icon>
+        Modifier Avion
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="avionForm" (ngSubmit)="onUpdate()">
+        <mat-form-field class="full-width">
+          <mat-label>Nom de l'avion</mat-label>
+          <input matInput type="text" formControlName="name" required>
+          <mat-error *ngIf="avionForm.get('name')?.hasError('required')">
+            Le nom de l'avion est obligatoire
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Type de l'avion</mat-label>
+          <input matInput type="text" formControlName="type" required>
+          <mat-error *ngIf="avionForm.get('type')?.hasError('required')">
+            Le type de l'avion est obligatoire
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Vitesse de l'avion</mat-label>
+          <input matInput type="number" formControlName="vitesse" required>
+          <mat-error *ngIf="avionForm.get('vitesse')?.hasError('required')">
+            La vitesse de l'avion est obligatoire
+          </mat-error>
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-stroked-button type="button" class="cancel-button" (click)="onCancel()">Annuler</button>
+          <button mat-raised-button color="primary" type="submit" class="update-button" [disabled]="!avionForm.valid">Sauvegarder</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

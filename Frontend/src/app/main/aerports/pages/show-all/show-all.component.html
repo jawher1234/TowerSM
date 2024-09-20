@@ -1,0 +1,62 @@
+<mat-form-field class="custom-mat-form-field">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input class="custom-input">
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8 custom-mat-card">
+    <mat-card-header>
+      <mat-card-title class="custom-title">Liste des aéroports</mat-card-title>
+      <button mat-button class="add-button" [matMenuTriggerFor]="menuOptions">Ajouter</button>
+      <mat-menu #menuOptions="matMenu">
+        <button mat-menu-item (click)="naviguerVersPageAjout()">Aéroport</button>
+        <button mat-menu-item (click)="naviguerVersRunway()">Runway</button>
+        <button mat-menu-item (click)="naviguerVersTaxiway()">Taxiway</button>
+        <button mat-menu-item (click)="naviguerVersApron()">Apron</button>
+      </mat-menu>  
+      </mat-card-header>
+  
+    <div class="table-wrapper">
+      <table mat-table [dataSource]="dataSource" class="custom-table">
+  
+        <!-- Colonne ID -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> ID </th>
+          <td mat-cell *matCellDef="let aerport" class="custom-cell"> {{ aerport.id }} </td>
+        </ng-container>
+  
+        <!-- Colonne name -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef class="custom-header-cell">name </th>
+          <td mat-cell *matCellDef="let aerport" class="custom-cell"> {{ aerport.name }} </td>
+        </ng-container>
+
+     <!-- Colonne position -->
+     <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> Position </th>
+      <td mat-cell *matCellDef="let aerport" class="custom-cell"> {{ aerport.position }} </td>
+    </ng-container>
+
+  
+            <!-- Colonne Actions -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> Actions </th>
+              <td mat-cell *matCellDef="let aerport" class="custom-cell">
+                <button mat-icon-button color="warn" (click)="deleteAerport(aerport.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+  
+              </td>
+            </ng-container>
+  
+        <!-- Rangement des colonnes -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="custom-header-row"></tr>
+        <tr mat-row *matRowDef="let aerport; columns: displayedColumns;" class="custom-row"></tr>
+      </table>
+    </div>
+  
+    <mat-paginator [pageSizeOptions]="[20,10,5,2]"
+                   showFirstLastButtons
+                   aria-label="Select page of aerports"
+                   class="custom-mat-paginator">
+    </mat-paginator>
+  </div>

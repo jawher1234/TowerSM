@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+@import '~font-awesome/css/font-awesome.css';
+
+$background: #F6F6F8;
+$font-color: rgba(255, 255, 255, 0.05);
+
+html, body, ul, p, h1, h2, h3, h4, h5, h6, blockquote {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: $background;
+}
+
+a {
+  color: $font-color;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.backdrop-bg {
+  box-shadow: none !important;
+}
+
+.bg-blue-Add-User .mat-dialog-container {
+  background: ghostwhite;
+}
+
+.backdrop-bg-Add-User {
+  box-shadow: rgb(12, 30, 53) 0px 20px 30px -10px;
+}
+.backdrop-bg-Add-User {
+  background: rgba(12, 30, 53, 0.37);
+}
+.backdrop-bg-accessDenied{
+  margin-left: 4%;
+  margin-top: 3.8%;
+  background: rgb(247, 250, 252);
+}
+.backdrop-bg-accountBanned{
+  margin-left: 0%;
+  margin-top: 0%;
+  background: rgb(247, 250, 252);
+}

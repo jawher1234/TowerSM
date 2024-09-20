@@ -1,0 +1,73 @@
+/* Style for table rows */
+.custom-row {
+  background-color: rgba(255, 255, 255); /* Couleur de fond des lignes avec transparence */
+}
+
+/* Style for la table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto; /* Rendre la table responsive */
+}
+
+/* Rendre les cellules de la table responsive */
+.custom-cell,
+.custom-header-cell {
+  white-space: nowrap; /* Empêcher le contenu de se couper sur les petites résolutions */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Style pour le mat-paginator */
+.custom-mat-paginator {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style pour le formulaire mat-form-field */
+.custom-mat-form-field {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Style pour l'entrée du formulaire */
+.custom-input {
+  width: 100%;
+}
+
+/* Style pour le mat-card */
+.custom-mat-card {
+  margin-bottom: 20px;
+  background-color: #ffffff; /* Couleur de fond du mat-card */
+  padding: 10px;
+  border-radius: 10px; /* Ajout de coins arrondis */
+}
+.custom-title {
+  font-size: 24px; /* Augmente la taille du texte */
+  font-weight: bold; /* Met en gras le texte */
+  font-family: 'Arial', sans-serif; /* Utilise la police Arial */
+  color: #333; /* Couleur du texte */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Ajoute une ombre au texte */
+}
+.add-button {
+  margin-bottom: 10px; /* Espacement entre le bouton d'ajout et la liste des avions */
+  background-color: #0000002b; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement interne */
+  text-align: center; /* Centrer le texte */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Coins arrondis */
+}
+
+.add-button {
+  float: right; /* Fait flotter le bouton à droite */
+ 
+}
+
+.add-button:hover {
+  background-color: #fefefe; /* Changement de couleur au survol */
+}

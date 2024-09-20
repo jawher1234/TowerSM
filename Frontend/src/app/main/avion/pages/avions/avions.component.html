@@ -1,0 +1,67 @@
+<mat-form-field class="custom-mat-form-field">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input class="custom-input">
+</mat-form-field>
+
+<div class="mat-elevation-z8 custom-mat-card">
+
+  <mat-card-header>
+    <mat-card-title class="custom-title">Liste des avions</mat-card-title>
+    <button mat-button color="primary" class="add-button" (click)="openAddAvionDialog()">Ajouter Avion</button>
+  </mat-card-header>
+
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="dataSource" class="custom-table">
+
+      <!-- Colonne ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> ID </th>
+        <td mat-cell *matCellDef="let avion" class="custom-cell"> {{ avion.id }} </td>
+      </ng-container>
+
+      <!-- Colonne Username -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> name </th>
+        <td mat-cell *matCellDef="let avion" class="custom-cell"> {{ avion.name }} </td>
+      </ng-container>
+
+      <!-- Colonne Email -->
+      <ng-container matColumnDef="vitesse">
+        <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> Vitesse </th>
+        <td mat-cell *matCellDef="let avion" class="custom-cell"> {{ avion.vitesse }} </td>
+      </ng-container>
+   <!-- Colonne position -->
+   <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> Type </th>
+    <td mat-cell *matCellDef="let avion" class="custom-cell"> {{ avion.type }} </td>
+  </ng-container>
+ 
+
+          <!-- Colonne Actions -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="custom-header-cell"> Actions </th>
+            <td mat-cell *matCellDef="let avion" class="custom-cell">
+              <button mat-icon-button color="warn" (click)="deleteAvion(avion.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-icon-button color="primary" (click)="openmodAvionDialog(avion.id)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="openAvionDialog(avion.id)" >
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+      <!-- Rangement des colonnes -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="custom-header-row"></tr>
+      <tr mat-row *matRowDef="let user; columns: displayedColumns;" class="custom-row"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[20, 5, 2]"
+                 showFirstLastButtons
+                 aria-label="Select page of avions"
+                 class="custom-mat-paginator">
+  </mat-paginator>
+</div>

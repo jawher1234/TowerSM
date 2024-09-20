@@ -1,0 +1,45 @@
+<div class="container">
+  <form (ngSubmit)="saveAerport()">
+    <h1>Ajouter Aéroport</h1>
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" id="name" required [(ngModel)]="aerport.name" name="name" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Position :</mat-label>
+      
+        <input matInput rows="4" id="position" name="position" [(ngModel)]="aerport.position" />
+     
+    </mat-form-field>
+
+    
+
+
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button mat-icon-button type="button" (click)="toggleMapCard()">
+          <mat-icon>map</mat-icon>
+        </button>
+      </div>
+      
+    <mat-card *ngIf="showMap">
+
+      <div id="map" ></div>
+    </mat-card>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Enregistrer</button>
+    <input type="reset" class="btn btn-info" value="Annuler">
+
+  </form>
+  
+  
+
+  <div *ngIf="showSuccess" class="success-message-container">
+    <div class="success-message">
+      <mat-icon class="success-icon">check_circle</mat-icon>
+      <span>Votre aéroport a été enregistré avec succès!</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div class="body"  >
+  <div class="imgBG">
+  </div>
+
+<div class="container" *ngIf="!isLoading">
+    <div class="form-container sign-in-container">
+      <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <h1>Se connecter</h1>
+        <div class="social-container">
+          <p></p>
+        </div>
+    
+
+        
+          <mat-form-field>
+            <input type="text" matInput  name="username" [(ngModel)]="form.username" required #username="ngModel" placeholder=" Nom d'utilisateur" autocomplete="on">
+          </mat-form-field> 
+          <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">
+            Username is required!
+          </div>
+          <mat-form-field>
+            <input type="password" matInput name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" placeholder="Mot de passe" autocomplete="on">
+          </mat-form-field> 
+          <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+            <div *ngIf="password.errors?.['minlength']">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        
+      
+          <button mat-button type="submit">
+            Se connecter
+          </button>
+        
+
+      </form>
+  
+   
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h2>Bonjour!</h2>
+          <p>Entrez vos données personnelles et commencez</p>
+        </div>
+  </div>
+  

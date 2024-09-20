@@ -1,0 +1,60 @@
+
+.custom-mat-card {
+  height: 80%;
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  background-image: url('/assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.chat-stream{
+
+  height: 70vh;
+}
+ 
+
+.stream-div {
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: auto;
+  height: 100%;
+}
+.chat-message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  clear: both;
+}
+
+.sent-message {
+  background-color: #DCF8C6;
+  float: right;
+  text-align: right;
+}
+
+.received-message {
+  background-color: #FFFFFF;
+  float: left;
+  text-align: left;
+}
+
+.chat-username {
+  font-weight: bold;
+}
+
+.chat-stream {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.message-form {
+  margin-top: 20px;
+}
+
+.typing-indicator {
+  font-style: italic;
+}

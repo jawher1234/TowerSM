@@ -1,0 +1,59 @@
+.avion-card {
+  background-color: rgba(255, 255, 255, 0.2); /* Légèrement transparent */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.3); /* Bordure grise subtile */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Effet de flou de fond */
+  max-width: 400px;
+  margin: auto;
+}
+
+.avion-card h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-row {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+input[matInput] {
+  background: rgba(255, 255, 255, 0.8); /* Fond blanc avec transparence */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+input[matInput]::placeholder {
+  color: #aaa; /* Couleur grise pour les placeholders */
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+button.button-container {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50; /* Couleur verte pour le bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.button-container:hover {
+  background-color: #45a049; /* Couleur verte plus foncée au survol */
+}
